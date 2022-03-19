@@ -1,0 +1,12 @@
+
+
+begin            ::- principal funciones | principal
+principal        ::- MAIN '(' ')' '{' lineascodigos '}'
+lineascodigos    ::- lineacodigo | 
+lineacodigo      ::- lineacodigo linea | linea 
+linea            ::- invocarmetodo ';' | crearvariable ';' | cambiarvalor ';' | ciclocondicion
+invocarmetodo    ::- NOMBRECAMPO '(' parametrosenvio')'
+parametrosenvio  ::- paenvio | 
+paenvio          ::- paenvio ',' penvio | penvio
+penvio           ::- valor | NOMBRECAMPO
+valor            ::- ENTERO | BOLEANO | CADENA | DECIMAL  
