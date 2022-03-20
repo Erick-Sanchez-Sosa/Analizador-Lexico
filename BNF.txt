@@ -1,15 +1,15 @@
 
 
-begin            ::- principal funciones | principal
-principal        ::- MAIN '(' ')' '{' lineascodigos '}'
-lineascodigos    ::- lineacodigo | 
-lineacodigo      ::- lineacodigo linea | linea 
-linea            ::- invocarmetodo ';' 
-invocarmetodo    ::- <nombre_campo> '(' parametrosenvio')'
-parametrosenvio  ::- paenvio | 
-paenvio          ::- paenvio ',' penvio | penvio
-penvio           ::- valor | <nombre_campo>
-valor            ::- <entero> | <booleano> | <cadena> | <decimal> 
+<begin>                 ::- <principal> <funciones> | <principal>
+<principal>             ::- <MAIN> '(' ')' <lineascodigos>
+<lineascodigos>         ::- <lineacodigo> | < >
+<lineacodigo>           ::- <lineacodigo> <linea> | <linea> 
+<linea>                 ::- <invocarmetodo>  
+<invocarmetodo>         ::- <nombre_campo><parametrosenvio>
+<parametrosenvio>       ::- <paenvio> | < >
+<paenvio>               ::- <paenvio><penvio> | <penvio>
+<penvio>                ::- <valor> | <nombre_campo>
+<valor>                 ::- <entero> | <booleano> | <cadena> | <decimal> 
 
 
 
