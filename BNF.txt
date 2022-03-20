@@ -51,9 +51,9 @@
 
 <ciclo_condicion>	::- <condicionSI> | <cicloPARA> | <cicloMIENTRAS>
 <condicionSI>		::- <condiconsi> | <condicion_si> <condicion_no> | <condicion_si> <condicion_sino> <condicion_no>
-<condicion_si>		::- SI '(' condicion ')' '{' lineascodigo '}'
+<condicion_si>		::- SI '(' <condicion> ')' '{' <lineas_instrucciones> '}'
 <condicion>		::- <valor> <condicional> <valor> | <valor> <condicional> <NOMBRECAMPO> | <NOMBRECAMPO> <condicional> <valor> | <NOMBRECAMPO> <condicional> <NOMBRECAMPO>
 <condicional>		::- ">" | "<" | "=" | ">=" | "<=" | "!="
-<condicion_no>		::- SINO '{' ' <lineascodigo> '}'
+<condicion_no>		::- SINO '{' ' <lineas_instrucciones> '}'
 <condiciones_sino>	::- <condicion_no> <condicion_sino> | <condicion_sino>
-<condicion_sino>	::- SISINO '(' condicion ')' '{' <lineascodigo>'}'
+<condicion_sino>	::- SISINO '(' condicion ')' '{' <lineas_instrucciones>'}'
