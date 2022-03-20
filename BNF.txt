@@ -30,7 +30,7 @@ valor            ::- <entero> | <booleano> | <cadena> | <decimal>
 <asignacion>            ::= <asignador><valor>|<asignador><nombre_campo>| <asignador><operacion_asignacion>
 <operacion_asignacion>  ::= <invocarmetodo>|<incre_dismin_variable>|<operacion_aritmetica>
 <operacion_aritmetica>  ::= <operacion_comun>|<operacion_aritmetica><operacion_comun>
-<operacion_comun>       ::= <valor><operador_aritmetico><valor>|<nombre_campo><operador_aritmetico><nombre_campo>|<nombre_campo><operador_aritmetico><nombre_campo>|<valor><operador_aritmetico><nombre_campo>
+<operacion_comun>       ::= <valor><operador_aritmetico><valor>|<nombre_campo><operador_aritmetico><nombre_campo>|<valor><operador_aritmetico><nombre_campo>
 		           |<operacion_comun><operador_aritmetico><real>|<operacion_comun><operador_aritmetico><nombre_campo>
 <incre_dismin_variable> ::= <nombre_campo><in_dis>
 
@@ -54,6 +54,6 @@ valor            ::- <entero> | <booleano> | <cadena> | <decimal>
 <condicion_si>		::- SI '(' condicion ')' '{' lineascodigo '}'
 <condicion>		::- <valor> <condicional> <valor> | <valor> <condicional> <NOMBRECAMPO> | <NOMBRECAMPO> <condicional> <valor> | <NOMBRECAMPO> <condicional> <NOMBRECAMPO>
 <condicional>		::- ">" | "<" | "=" | ">=" | "<=" | "!="
-<condicion_no>		::- NO '{' ' <lineascodigo> '}'
+<condicion_no>		::- SINO '{' ' <lineascodigo> '}'
 <condiciones_sino>	::- <condicion_no> <condicion_sino> | <condicion_sino>
-<condicion_sino>	::- SINO '(' condicion ')' '{' <lineascodigo>'}'
+<condicion_sino>	::- SISINO '(' condicion ')' '{' <lineascodigo>'}'
