@@ -1,10 +1,4 @@
 
-<<<<<<< HEAD
-<>  ::- <principal> <funciones> | <principal>
-<principal>             ::- <MAIN> '(' ')' <lineascodigos>
-<lineascodigos>         ::- <lineacodigo> | < >
-<lineacodigo>  ::- <lineacodigo> <linea> | <línea> 
-=======
 
 <begin>                 ::- <principal> <funciones> | <principal>
 <principal>             ::- <MAIN> '(' ')' <lineascodigos>
