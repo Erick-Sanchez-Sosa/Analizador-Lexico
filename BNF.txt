@@ -49,9 +49,11 @@ valor            ::- <entero> | <booleano> | <cadena> | <decimal>
 <simbolo_apertura>     ::= {      
 <simbolo_cierre>       ::= }
 
+<ciclo_condicion>	::- <SIcondicion> | <cicloPARA> | <cicloMIENTRAS>
 <SIcondicion>		::- <condiconsi> | <condicion_si> <condicion_no> | <condicion_si> <condicion_sino> <condicion_no>
 <condicion_si>		::- SI '(' condicion ')' '{' lineascodigo '}'
 <condicion>		::- <valor> <condicional> <valor> | <valor> <condicional> <NOMBRECAMPO> | <NOMBRECAMPO> <condicional> <valor> | <NOMBRECAMPO> <condicional> <NOMBRECAMPO>
 <condicional>		::- ">" | "<" | "=" | ">=" | "<=" | "!="
-<condicion_no>		::- <condicion_no> <condicion_sino> | <condicion_sino>
+<condicion_no>		::- NO '{' ' <lineascodigo> '}'
+<condiciones_sino>	::- <condicion_no> <condicion_sino> | <condicion_sino>
 <condicion_sino>	::- SINO '(' condicion ')' '{' <lineascodigo>'}'
