@@ -1,8 +1,16 @@
 
+<<<<<<< HEAD
 <>  ::- <principal> <funciones> | <principal>
 <principal>             ::- <MAIN> '(' ')' <lineascodigos>
 <lineascodigos>         ::- <lineacodigo> | < >
 <lineacodigo>  ::- <lineacodigo> <linea> | <línea> 
+=======
+
+<begin>                 ::- <principal> <funciones> | <principal>
+<principal>             ::- <MAIN> '(' ')' <lineascodigos>
+<lineascodigos>         ::- <lineacodigo> | < >
+<lineacodigo>           ::- <lineacodigo> <linea> | <linea> 
+>>>>>>> d874852dae57db39f367ed0d49a657cbc213cfbc
 <linea>                 ::- <invocarmetodo>  
 <invocarmetodo>         ::- <nombre_campo><parametrosenvio>
 <parametrosenvio>       ::- <paenvio> | < >
