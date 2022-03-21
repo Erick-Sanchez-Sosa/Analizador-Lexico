@@ -57,3 +57,7 @@
 <condicion_no>		::- SINO '{' ' <lineas_instrucciones> '}'
 <condiciones_sino>	::- <condicion_no> <condicion_sino> | <condicion_sino>
 <condicion_sino>	::- SISINO '(' condicion ')' '{' <lineas_instrucciones>'}'
+
+
+<ciclosPARA> ::- PARA '(' <inicia_para> ' ; ' <condicion> ' ; ' <incre_dismin_variable>  ')' '{' <lineascodigos> '}';
+<inicia_para> ::-  <tipo_dato> <NOMBRECAMPO> asignarvalor;
