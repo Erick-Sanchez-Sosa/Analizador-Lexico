@@ -62,3 +62,11 @@
 
 <ciclosPARA> ::- PARA '(' <inicia_para> ' ; ' <condicion> ' ; ' <incre_dismin_variable>  ')' '{' <lineascodigos> '}'
 <inicia_para> ::-  <tipo_dato> <NOMBRECAMPO> asignarvalor
+
+<cicloMIENTRAS>	        ::-  '(' <condicion> ')' '{' <lineas_instrucciones> '}'
+<funciones>	        ::- <funciones> <funcion> | <funcion>
+<funcion>		::- <tipo_retorno> <NOMBRECAMPO> '(' <parametro_entrada> ')' '{' <lineas_instrucciones'}'
+<tipo_retorno>		::- <tipo_dato>
+<parametros_entrada>	::- <parametros>
+<parametros>		::- <parametros> ',' <parametro> | <parametro>
+<parametro>		::- <tipo_dato> <NOMBRECAMPO> | 
