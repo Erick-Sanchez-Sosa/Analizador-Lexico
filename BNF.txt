@@ -33,12 +33,13 @@
 <operacion_comun>       ::= <valor><operador_aritmetico><valor>|<nombre_campo><operador_aritmetico><nombre_campo>|<valor><operador_aritmetico><nombre_campo>
 		           |<operacion_comun><operador_aritmetico><real>|<operacion_comun><operador_aritmetico><nombre_campo>
 <incre_dismin_variable> ::= <nombre_campo><in_dis>
-
+<in_dis>                ::= <aumentar>|<disminuir>
 <cambiar_valor>         ::= <nombre_campo><asignador><camb_valor>
 <camb_valor>            ::= <valor>|<operacion_asignacion>|<nombre_campo>
 
 
-<in_dis>               ::= AUMENTAR|DISMINUIR
+<aumentar>             ::= ++
+<disminuir>            ::= --
 <tipo_dato>            ::= ENT|DEC|CAD|V_F
 <asignador>            ::= =|->
 <operador_aritmetico>  ::= +|-|*|/ 
