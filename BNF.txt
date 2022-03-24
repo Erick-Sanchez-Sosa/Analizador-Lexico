@@ -24,7 +24,7 @@
 <parametros>            ::= <parametro>|<parametros>','<parametro>
 <parametro>             ::= <tipo_dato><nombre_campo>
 <lineas_instrucciones>  ::= <linea_instruccion>|<lineas_instrucciones><linea_instruccion>
-<linea_instruccion>     ::= <crear_variable>';' |<cambiar_valor>';' | <ciclo_condicion>
+<linea_instruccion>     ::= <crear_variable>';' |<cambiar_valor>';' | <ciclo_condicion>';'|<retorno>';'
 
 <crear_variable>        ::= <tipo_dato><nombre_campo>|<tipo_dato><nombre_campo><asignacion>
 <asignacion>            ::= <asignador><valor>|<asignador><nombre_campo>| <asignador><operacion_asignacion>
@@ -36,11 +36,11 @@
 <in_dis>                ::= <aumentar>|<disminuir>
 <cambiar_valor>         ::= <nombre_campo><asignador><camb_valor>
 <camb_valor>            ::= <valor>|<operacion_asignacion>|<nombre_campo>
-
+<retorno>               ::= <valor>|<nombre_campo> |<operacion_aritmetica>
 
 <aumentar>             ::= ++
 <disminuir>            ::= --
-<tipo_dato>            ::= ENT|DEC|CAD|V_F
+<tipo_dato>            ::= ENT|DEC|CAD|V_F|
 <asignador>            ::= =|->
 <operador_aritmetico>  ::= +|-|*|/ 
 <letra>	               ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
