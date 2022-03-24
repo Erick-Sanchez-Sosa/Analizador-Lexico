@@ -36,7 +36,7 @@
 <in_dis>                ::= <aumentar>|<disminuir>
 <cambiar_valor>         ::= <nombre_campo><asignador><camb_valor>
 <camb_valor>            ::= <valor>|<operacion_asignacion>|<nombre_campo>
-<retorno>               ::= <valor>|<nombre_campo> |<operacion_aritmetica>
+<retorno>               ::= 'RETORNAR'<valor>|'RETORNAR'<nombre_campo> |'RETORNAR'<operacion_aritmetica>
 
 <aumentar>             ::= ++
 <disminuir>            ::= --
