@@ -61,7 +61,7 @@
 
 
 <ciclosPARA> ::- PARA '(' <inicia_para> ' ; ' <condicion> ' ; ' <incre_dismin_variable>  ')' '{' <lineascodigos> '}'
-<inicia_para> ::-  <tipo_dato> <nombre_campo> asignarvalor
+<inicia_para> ::-  <tipo_dato> <nombre_campo> <asignador>
 
 <cicloMIENTRAS>	        ::-  '(' <condicion> ')' '{' <lineas_instrucciones> '}'
 <funciones>	        ::- <funciones> <funcion> | <funcion>
