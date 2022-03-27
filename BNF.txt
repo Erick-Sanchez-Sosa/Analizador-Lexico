@@ -18,26 +18,29 @@
 <decimal> 	        ::= <entero>|<entero><punto><entero>
 <entero>                ::= <digito>|<entero><digito>
 <funciones>             ::= <funcion>|<funciones><funcion>
-<funcion>               ::= <tipo_retorno><nombre_campo>'('<parametros_entrada>')'<simbolo_apertura><lineas_instrucciones><simbolo_cierre>
-<tipo_retorno>          ::= <tipo_dato>
+<funcion>               ::= <nombre_campo>'('<parametros_entrada>')'<simbolo_apertura><lineas_instrucciones><simbolo_cierre>
 <parametro_entrada>     ::= <parametros>
 <parametros>            ::= <parametro>|<parametros>','<parametro>
 <parametro>             ::= <tipo_dato><nombre_campo>
 <lineas_instrucciones>  ::= <linea_instruccion>|<lineas_instrucciones><linea_instruccion>
-<linea_instruccion>     ::= <crear_variable>';' |<cambiar_valor>';' | <ciclo_condicion>';'|<retorno>';'
+<linea_instruccion>     ::= <crear_variable>';' |<cambiar_valor>';' | <ciclo_condicion>';'|<imprimir>';'|<almacenar>';'
 
 <crear_variable>        ::= <tipo_dato><nombre_campo>|<tipo_dato><nombre_campo><asignacion>
 <asignacion>            ::= <asignador><valor>|<asignador><nombre_campo>| <asignador><operacion_asignacion>
 <operacion_asignacion>  ::= <invocarmetodo>|<incre_dismin_variable>|<operacion_aritmetica>
 <operacion_aritmetica>  ::= <operacion_comun>|<operacion_aritmetica><operacion_comun>
-<operacion_comun>       ::= <valor><operador_aritmetico><valor>|<nombre_campo><operador_aritmetico><nombre_campo>|<valor><operador_aritmetico><nombre_campo>
-		           |<operacion_comun><operador_aritmetico><real>|<operacion_comun><operador_aritmetico><nombre_campo>
+<operacion_comun>       ::= <valor_num><operador_aritmetico><valor_num>|<nombre_campo><operador_aritmetico><nombre_campo>|<valor_num><operador_aritmetico><nombre_campo>|<nombre_campo><operador_aritmetico><valor_num>
+		           |<operacion_comun><operador_aritmetico><valor_num>|<operacion_comun><operador_aritmetico><nombre_campo>
+<valor_num>		::=<entero>|<decimal>
 <incre_dismin_variable> ::= <nombre_campo><in_dis>
 <in_dis>                ::= <aumentar>|<disminuir>
 <cambiar_valor>         ::= <nombre_campo><asignador><camb_valor>
 <camb_valor>            ::= <valor>|<operacion_asignacion>|<nombre_campo>
-<retorno>               ::= 'RETORNAR'<valor>|'RETORNAR'<nombre_campo> |'RETORNAR'<operacion_aritmetica>
 
+<imprimir>              ::= IMPRIMIR'(' '"'<texto>'"' ')'|IMPRIMIR<punto><salto_linea>'(' '"'<texto>'"' ')'
+<almacenar>	        ::= ALMACENAR<punto><tipo_dato><asignador><nombre_campo>	
+<salto_linea>	       ::= SL
+<texto>		       ::= <cadena>
 <aumentar>             ::= ++
 <disminuir>            ::= --
 <tipo_dato>            ::= ENT|DEC|CAD|V_F|
@@ -60,13 +63,7 @@
 <condicion_sino>	::- SISINO '(' condicion ')' '{' <lineas_instrucciones>'}'
 
 
-<ciclosPARA> ::- PARA '(' <inicia_para> ' ; ' <condicion> ' ; ' <incre_dismin_variable>  ')' '{' <lineascodigos> '}'
+<ciclosPARA> ::- PARA '(' <inicia_para> ' ; ' <condicion> ' ; ' <incre_dismin_variable>  ')' '{' <lineas_intstrucciones> '}'
 <inicia_para> ::-  <tipo_dato> <nombre_campo> <asignador>
 
-<cicloMIENTRAS>	        ::-  '(' <condicion> ')' '{' <lineas_instrucciones> '}'
-<funciones>	        ::- <funciones> <funcion> | <funcion>
-<funcion>		::- <tipo_retorno> <nombre_campo> '(' <parametro_entrada> ')' '{' <lineas_instrucciones'}'
-<tipo_retorno>		::- <tipo_dato>
-<parametros_entrada>	::- <parametros>
-<parametros>		::- <parametros> ',' <parametro> | <parametro>
-<parametro>		::- <tipo_dato> <nombre_campo> | 
+<cicloMIENTRAS>	        ::-  MIENTRAS '(' <condicion> ')' '{' <lineas_instrucciones> '}'
