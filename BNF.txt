@@ -37,21 +37,25 @@
 <cambiar_valor>         ::= <nombre_campo><asignador><camb_valor>
 <camb_valor>            ::= <valor>|<operacion_asignacion>|<nombre_campo>
 
-<imprimir>              ::= IMPRIMIR'(' '"'<texto>'"' ')'|IMPRIMIR<punto><salto_linea>'(' '"'<texto>'"' ')'
+<imprimir>              ::= IMPRIMIR'(' '"'<texto>'"' ')'|IMPRIMIR'(' <val_ope> ')'|IMPRIMIR'(''"'<texto>'"' ',' <varios_val_ope> ')'|
+                            IMPRIMIR<punto><salto_linea>'(' '"'<texto>'"' ')'|IMPRIMIR<punto><salto_linea>'(' <val_ope> ')'|IMPRIMIR<punto><salto_linea>'(' '"'<texto>'"' ','<varios_val_ope> ')'
+<varios_val_ope>        ::= <val_ope>|<varios_val_ope>','<val_ope>
+<val_ope>               ::= <valor>|<operacion_aritmetica>
+<salto_linea>	        ::= SL
+<texto>		        ::= <cadena>
 <almacenar>	        ::= ALMACENAR<punto><tipo_dato><asignador><nombre_campo>	
-<salto_linea>	       ::= SL
-<texto>		       ::= <cadena>
-<aumentar>             ::= ++
-<disminuir>            ::= --
-<tipo_dato>            ::= ENT|DEC|CAD|V_F|
-<asignador>            ::= =|->
-<operador_aritmetico>  ::= +|-|*|/ 
-<letra>	               ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
-<digito>	       ::= 0|1|2|3|4|5|6|7|8|9
-<punto>                ::= .
-<booleano>             ::= VERDADERO|FALSO 
-<simbolo_apertura>     ::= {      
-<simbolo_cierre>       ::= }
+
+<aumentar>              ::= ++
+<disminuir>             ::= --
+<tipo_dato>             ::= ENT|DEC|CAD|V_F|
+<asignador>             ::= =|->
+<operador_aritmetico>   ::= +|-|*|/ 
+<letra>	                ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+<digito>	        ::= 0|1|2|3|4|5|6|7|8|9
+<punto>                 ::= .
+<booleano>              ::= VERDADERO|FALSO 
+<simbolo_apertura>      ::= {      
+<simbolo_cierre>        ::= }
 
 <ciclo_condicion>	::- <condicionSI> | <cicloPARA> | <cicloMIENTRAS>
 <condicionSI>		::- <condiconsi> | <condicion_si> <condicion_no> | <condicion_si> <condicion_sino> <condicion_no>
