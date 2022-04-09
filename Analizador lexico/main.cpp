@@ -144,5 +144,15 @@ void AnalizadorDeCaracter(char letra){
 	   ||letra=='('||letra==')'||letra==';'){
 		Estados();
 	}
+	if( letra>='A' && letra<='Z' ){
+		if(Estado==e0){
+			Estado=e1;
+		}else if(Estado==e1||Estado==e2){
+			Estado=e2;
+		}
+		else if(Estado!=e0 && Estado!=e1 && Estado!=e2){
+			exit(-1);
+		}
+	}
 
 }	
