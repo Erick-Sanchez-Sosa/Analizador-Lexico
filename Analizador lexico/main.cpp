@@ -109,7 +109,40 @@ int main() {
 			}
 			printf("\n");
 		}
-	
 
+		
+		for(x=1;n>=x;x++){
+			
+			for(s=1;s<=x;s++){
+				printf(" ");
+			}
+			
+			for(k=2*n-1;2*x-1<=k;k--){
+				printf("*!*");
+			}
+			printf("\n");
+		}
+		//______________________________________________________________________________________________________________________
+		
+		printf("\n");
+		printf("\n  EL ARCHIVO DE SALIDA ESTA LISTO");
+		printf("\n");
+		system("pause");
+		
+	}else{
+		
+		printf("NO SE PUDO EJECUTAR");
+		
+	}
+	
 	return 0;
 }
+
+void AnalizadorDeCaracter(char letra){
+	
+	if(letra==32||letra=='}'||letra=='{'
+	   ||letra=='('||letra==')'||letra==';'){
+		Estados();
+	}
+
+}	
