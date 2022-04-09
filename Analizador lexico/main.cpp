@@ -39,6 +39,7 @@ int contadorCondicional=0;
 
 
 int main() {
+	//system(COLOR B0);
 	printf("Hola, Mundo!\n");
 	FILE *archivoE;
 	FILE *archivoS;
@@ -54,6 +55,34 @@ int main() {
 		return 1;
 	}
 	printf("ARCHIVO ENCONTRADO \n");
+	
+	//------------------------------
+	while(1){
+		//itera caracter por caracter
+		caracter=fgetc(archivoE);
+		if(caracter==EOF){
+			break;
+		}
+		AnalizadorDeCaracter(caracter);
+		if(caracter==';'){
+			contadorSimbolos++;
+		}
+	}
+	i++;
+	//
+	//System("COLOR OA");
+	//
+	//documento de salida
+	fputs("\n\n------Analisis de salida-------------\n\n",archivoS);
+	fprintf(archivoS, "Palabras Reservadas: %d", contadorPalabrasReservadas);
+	fprintf(archivoS, "\nCiclos: %d", contadorCiclos/2);
+	fprintf(archivoS, "\nVariables: %d", contadorVariables);
+	fprintf(archivoS, "\nNumeros: %d", contadorNumeros);
+	fprintf(archivoS, "\nAritmeticos: %d", contadorSignos);
+	fprintf(archivoS, "\nSimbolos: %d", contadorSimbolos);
+	fprintf(archivoS, "\nEncender: %d", contadorEncender);
+	fprintf(archivoS, "\nApagado: %d", contadorApagado);
+	fprintf(archivoS, "\nCondicional: %d", contadorCondicional/2);
 	
 	return 0;
 }
