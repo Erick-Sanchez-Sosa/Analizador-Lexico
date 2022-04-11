@@ -14,8 +14,7 @@ void Reservados();
 
 
 //Palabras Reservadas
-const char *reservadas[] = {"inicio","encender","apagar","definir","repetir","fin","mientras","si","sino","string","int","boolean","decimal","true","false","para","posicion"};
-
+const char *reservadas[] = {"PRINCIPAL","MIENTRAS","PARA","SI","SINO","IMPRIMIR","ALMACENAR","ENT","DEC","CAD","V_F","VERDADERO","FALSO","SISINO"};
 int IndicadorTam=sizeof(reservadas)/sizeof(char *);
 int i;
 char palabraIngresada[50];
@@ -84,66 +83,37 @@ int main() {
 	fprintf(archivoS, "\nApagado: %d", contadorApagado);
 	fprintf(archivoS, "\nCondicional: %d", contadorCondicional/2);
 
-	//Imprime Mensaje en pantalla
-	int p;
-	printf("DESEA INICIAR:  1 = SI Y 0 = NO  ");
-	printf("\n");
-	scanf ("%d", &p);
-	printf("\n");
-	
-	if( p == 1){
-		//	scanf ("%dc", &cadena);
-		int x,s,k,n;
-		
-		printf(" CAPACIDAD:  ");
-		printf("\n");
-		scanf ("%d", &n);
-		
-		for(x=1; n-1>=x;x++){
-			
-			for(s=n;s>=x;s--){
-				printf(" ");
-			}
-			for(k=1;2*x-1>=k;k++){
-				printf("*!*");
-			}
-			printf("\n");
-		}
-
-		
-		for(x=1;n>=x;x++){
-			
-			for(s=1;s<=x;s++){
-				printf(" ");
-			}
-			
-			for(k=2*n-1;2*x-1<=k;k--){
-				printf("*!*");
-			}
-			printf("\n");
-		}
-		//______________________________________________________________________________________________________________________
-		
-		printf("\n");
-		printf("\n  EL ARCHIVO DE SALIDA ESTA LISTO");
-		printf("\n");
-		system("pause");
-		
-	}else{
-		
-		printf("NO SE PUDO EJECUTAR");
-		
-	}
 	
 	return 0;
 }
 
 void AnalizadorDeCaracter(char letra){
 	
-	if(letra==32||letra=='}'||letra=='{'
-	   ||letra=='('||letra==')'||letra==';'){
-		Estados();
+	
+	if(letra=='{'|| letra=='}'){
+		if(Estado==e0){
+			Estado=e1;
+		}
+		if(Estado==e2 || Estado==e3){
+			Estado=e0;
+		}
 	}
+	if (letra=='('||letra==')'){
+		if(Estado==e2 || Estado==e3){
+			Estado=e2;
+		}else if(Estado==e17){
+			Estado=e0;
+		}
+
+	}
+	if(letra==';'){
+		if(Estado==e2||Estado==e3||Estado==e4||Estado==e5||Estado==e6){
+			Estado=e0;
+		}
+		
+	}
+	
+
 	if( letra>='A' && letra<='Z' ){
 		if(Estado==e0){
 			Estado=e1;
