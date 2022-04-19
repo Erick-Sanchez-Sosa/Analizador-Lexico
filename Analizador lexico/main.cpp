@@ -84,7 +84,7 @@ int main() {
 	fprintf(archivoS, "\nCondicional: %d", contadorCondicional/2);
 
 		int p;
-	printf("DESEA VER LA SALIDA:  1 = SI Y 0 = NO  ");
+	printf("DESEA INCIAR CON EL ANALIZADOR:  1 = SI Y 0 = NO  ");
 	printf("\n");
 	scanf ("%d", &p);
 	printf("\n");
@@ -104,6 +104,19 @@ int main() {
 				printf(" ");
 			}
 			for(k=1;2*x-1>=k;k++){
+				printf("*!*");
+			}
+			printf("\n");
+		}
+
+		
+		for(x=1;n>=x;x++){
+			
+			for(s=1;s<=x;s++){
+				printf(" ");
+			}
+			
+			for(k=2*n-1;2*x-1<=k;k--){
 				printf("*!*");
 			}
 			printf("\n");
@@ -128,6 +141,7 @@ void AnalizadorDeCaracter(char letra){
 		if(Estado==e2 || Estado==e3){
 			Estado=e0;
 		}
+		Estados();
 	}
 	if (letra=='('||letra==')'){
 		if(Estado==e2 || Estado==e3){
@@ -135,12 +149,14 @@ void AnalizadorDeCaracter(char letra){
 		}else if(Estado==e17){
 			Estado=e0;
 		}
+		Estados();
 
 	}
 	if(letra==';'){
 		if(Estado==e2||Estado==e3||Estado==e4||Estado==e5||Estado==e6){
 			Estado=e0;
 		}
+		Estados();
 		
 	}
 	
