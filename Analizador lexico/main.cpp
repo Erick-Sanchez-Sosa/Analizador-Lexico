@@ -121,9 +121,15 @@ int main() {
 			}
 			printf("\n");
 		}
+
+		printf("\n");
+		printf("\n  ARCHIVO DE SALIDA LISTO");
+		printf("\n");
+		system("pause");
 		
 
 	}else{
+		printf("NO SE PUDO INICIAR");
 		
 	}
 
