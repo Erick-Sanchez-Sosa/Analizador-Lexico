@@ -252,7 +252,73 @@ void AnalizadorDeCaracter(char letra){
 		Estado = e15;
 	}
 	
+	if(letra=='/'||letra=='*'){
+		if(Estado==e0){
+			Estado=e18;
+		}else{
+			exit(-1);
+		}
+	}
 	
+	if(letra=='<'){
+		if(Estado==e0){
+			Estado=e12;
+		}else{
+			exit(-1);
+		}
+	}
+	if(letra=='>'){
+		if(Estado==e0){
+			Estado=e14;
+		}else{
+			exit(-1);
+		}
+	}
+	
+	
+	if(letra=='!'){
+		if(Estado==e0){
+			Estado=e18;
+		}else{
+			exit(-1);
+		}
+		
+		
+		
+	void Reservadas(){
+		for(int i=0;i<IndicadorTam;i++){
+			//strcmp se encarga de comparar caracter por caracter dos Strings
+			//reservadas[i] son las palabras reservadas que declaramos como variable global al inicio del programa
+			//identificados es la palabra que el analizador lexico encontro
+			if(strcmp(reservadas[i],palabraIngresada)==0){
+				//Contar Encender
+				if(strcmp(reservadas[0],palabraIngresada)==0)
+					contadorEncender++;
+				//Contar Apagar
+				if(strcmp(reservadas[1],palabraIngresada)==0)
+					contadorApagado++;
+				
+				//Contar Ciclo Repetir
+				if(strcmp(reservadas[4],palabraIngresada)==0)
+					contadorCiclos++;
+				
+				//Contar Ciclo Mientras
+				if(strcmp(reservadas[6],palabraIngresada)==0)
+					contadorCiclos++;
+				
+				//Contar Condicional
+				if(strcmp(reservadas[7],palabraIngresada)==0)
+					contadorCondicional++;
+				
+				//Cuenta las palabras reservadas que encuentre
+				contadorPalabrasReservadas++;
+				palabraIngresada[0]='\0';
+				break;
+			}
+			if(i==(IndicadorTam)-1){
+				exit(-1);
+			}
+		}	
 
 }//fin void
 
