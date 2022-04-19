@@ -84,11 +84,31 @@ int main() {
 	fprintf(archivoS, "\nCondicional: %d", contadorCondicional/2);
 
 		int p;
-	printf("DESEA INICIAr:  1 = SI Y 0 = NO  ");
+	printf("DESEA VER LA SALIDA:  1 = SI Y 0 = NO  ");
 	printf("\n");
 	scanf ("%d", &p);
 	printf("\n");
 	if (p==1){
+		int x;
+		int s; 
+		int k; 
+		int n;
+
+		printf(" INGRESE UN NUMERO ENTERO:  ");
+		printf("\n");
+		scanf ("%d", &n);
+
+		for(x=1; n-1>=x;x++){
+			
+			for(s=n;s>=x;s--){
+				printf(" ");
+			}
+			for(k=1;2*x-1>=k;k++){
+				printf("*!*");
+			}
+			printf("\n");
+		}
+		
 
 	}else{
 		
