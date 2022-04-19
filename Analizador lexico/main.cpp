@@ -318,7 +318,56 @@ void AnalizadorDeCaracter(char letra){
 			if(i==(IndicadorTam)-1){
 				exit(-1);
 			}
-		}	
+		}
+    }
+	
+	void Estados(){
+		
+		switch(Estado){
+			case 1:contadorVariables++;
+				break;
+			case 2:contadorVariables++;
+				break;
+			case 3:Reservadas();
+				break;
+			case 4:contadorVariable++;
+				break;
+			case 5:contadorVariable++;
+				break;
+			case 6:contadorVariable++;
+				break;
+			case 7:contadorVariable++;
+				break;
+			case 8:contadorVariable++;
+				break;
+			case 9:contadorVariable++;
+				break;
+			case 10:contadorVariable++;
+				break;
+			case 11:contadorVariable++;
+				break;
+			case 12:contadorVariable++;
+				break;
+			case 13:contadorVariable++;
+				break;
+			case 14:contadorVariable++;
+				break;
+			case 15:contadorVariable++;
+				break;
+			case 16:contadorVariable++;
+				break;
+			case 17:contadorVariable++;
+				break;
+			case 18:contadorVariable++;
+				break;
+			case 19:contadorVariable++;
+				break;
+			case 20:contadorVariable++;
+				break;
+		}
+		Estado =e0;
+	}   
+
 
 }//fin void
 
