@@ -83,6 +83,17 @@ int main() {
 	fprintf(archivoS, "\nApagado: %d", contadorApagado);
 	fprintf(archivoS, "\nCondicional: %d", contadorCondicional/2);
 
+		int p;
+	printf("DESEA INICIAr:  1 = SI Y 0 = NO  ");
+	printf("\n");
+	scanf ("%d", &p);
+	printf("\n");
+	if (p==1){
+
+	}else{
+		
+	}
+
 	
 	return 0;
 }
