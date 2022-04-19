@@ -1,0 +1,40 @@
+
+     PRINCIPAL (){
+      	  crearVariables();
+      	  obtenerValores();
+      	  imprimirTablaMultiplicarNumeroMayor(numero1,numero2);	 
+}
+ 
+    crearVariables(){
+	ENT numero1=0;
+	ENT numero2=0;
+	ENT numeroMayor=0;
+	ENT limite=0;
+	 	     
+}  
+
+    obtenerValores(){
+	IMPRIMIR.SL("Ingrese dos numeros")
+	IMPRIMIR.SL("numero 1: ")
+	ALMACENAR.ENT=numero1
+	IMPRIMIR.SL("numero 2: ")
+	ALMACENAR.ENT=numero2
+	IMPRIMIR.SL("Ingrese el limite de la tabla de multiplicar: ")
+	ALMACENAR.ENT=limite
+	
+}
+
+    imprimirTablaMultiplicarNumeroMayor(ENT numero1, ENT numero2){
+	SI(numero1>numero1){
+		numeroMayor=numero1;
+		
+	}SINO{
+		numeroMayor=numero2;
+	}
+	Imprimir.sl("El numero mayor es: ",numeroMayor)
+	Imprimir.sl("su tabla de multiplicar es: ")
+	PARA(ENT i=0;i<=limite;i++){
+		Imprimir.sl(i*numeroMayor)
+	}
+}	 
+

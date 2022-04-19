@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <conio.h>
 
+
 //Funciones
 void imprimir();
 void extra();
@@ -39,12 +40,11 @@ int contadorCondicional=0;
 
 int main() {
 	//system(COLOR B0);
-	printf("Hola, Mundo!\n");
 	FILE *archivoE;
 	FILE *archivoS;
 	printf("------ Analizador Lexico --------------\n");
 	printf("Preparando archivo   \n");
-	archivoE=fopen("nombre de texto entrada.txt","r");
+	archivoE=fopen("Entrada.txt","r");
 	archivoS=fopen("nombre de texto salida.txt","wt");
 	
 	char caracter;
@@ -282,7 +282,8 @@ void AnalizadorDeCaracter(char letra){
 		}else{
 			exit(-1);
 		}
-		
+	}
+}
 		
 		
 	void Reservadas(){
@@ -328,47 +329,65 @@ void AnalizadorDeCaracter(char letra){
 				break;
 			case 2:contadorVariables++;
 				break;
-			case 3:Reservadas();
+			case 3:contadorPalabrasReservadas++;
 				break;
-			case 4:contadorVariable++;
+			case 4:contadorNumeros++;
 				break;
-			case 5:contadorVariable++;
+			case 5:contadorNumeros++;
 				break;
-			case 6:contadorVariable++;
+			case 6:contadorNumeros++;
 				break;
-			case 7:contadorVariable++;
+			case 7:contadorSignos++;
 				break;
-			case 8:contadorVariable++;
+			case 8:contadorSignos++;
 				break;
-			case 9:contadorVariable++;
+			case 9:contadorSimbolos++;
 				break;
-			case 10:contadorVariable++;
+			case 10:contadorSignos++;
 				break;
-			case 11:contadorVariable++;
+			case 11:contadorSimbolos++;
 				break;
-			case 12:contadorVariable++;
+			case 12:contadorSimbolos++;
 				break;
-			case 13:contadorVariable++;
+			case 13:contadorSimbolos++;
 				break;
-			case 14:contadorVariable++;
+			case 14:contadorSimbolos++;
 				break;
-			case 15:contadorVariable++;
+			case 15:contadorSimbolos++;
 				break;
-			case 16:contadorVariable++;
+			case 16:contadorSimbolos++;
 				break;
-			case 17:contadorVariable++;
+			case 17:contadorSignos++;
 				break;
-			case 18:contadorVariable++;
+			case 18:contadorSignos++;
 				break;
-			case 19:contadorVariable++;
+			case 19:contadorSimbolos++;
 				break;
-			case 20:contadorVariable++;
+			case 20:contadorNumeros++;
 				break;
+				default:
+					break;
 		}
 		Estado =e0;
 	}   
 
 
-}//fin void
+//Metodo para verificar si el token formado corresponde a una palabra reservada
+/*bool verificarReservada(char palabra[]){
+	int comp;
+	bool esReservada=false;
+	string str(palabra);
+	for(int i=0; i<MAX_RES; i++)
+	{
+		comp = strcmp(PalabrasReservadas[i],palabra);
+		if(comp == 0)
+		{
+			esReservada = true;
+		break;
+		}
+	}
+	return esReservada;
+}*/
+//fin void
 
 
