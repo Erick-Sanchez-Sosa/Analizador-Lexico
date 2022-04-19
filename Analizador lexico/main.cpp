@@ -150,7 +150,7 @@ void AnalizadorDeCaracter(char letra){
 		Estados();
 	}
 	if (letra=='('||letra==')'){
-		if(Estado==e2 || Estado==e3){
+		if(Estado==e2 || Estado==e3||Estado==e0||Estado==e4||Estado==e5||Estado==e6){
 			Estado=e2;
 		}else if(Estado==e17){
 			Estado=e0;
@@ -158,7 +158,7 @@ void AnalizadorDeCaracter(char letra){
 		Estados();
 
 	}
-	if(letra==';'){
+	if(letra==';'||letra==','){
 		if(Estado==e2||Estado==e3||Estado==e4||Estado==e5||Estado==e6){
 			Estado=e0;
 		}
@@ -170,7 +170,7 @@ void AnalizadorDeCaracter(char letra){
 	if( letra>='A' && letra<='Z' ){
 		if(Estado==e0){
 			Estado=e1;
-		}else if(Estado==e1||Estado==e2){
+		}else if(Estado==e1||Estado==e2||Estado==e3||Estado==e19){
 			Estado=e2;
 		}
 		else if(Estado!=e0 && Estado!=e1 && Estado!=e2){
@@ -189,7 +189,7 @@ void AnalizadorDeCaracter(char letra){
 			strcat(palabraIngresada,temp);
 			Estado = e3;
 		}
-		else if(Estado ==e1 || Estado == e2)
+		else if(Estado ==e1 || Estado == e2||Estado==e12|| Estado==e14||Estado==e18)
 		{
 			Estado = e2;
 		}
@@ -220,7 +220,7 @@ void AnalizadorDeCaracter(char letra){
 		{
 			Estado = e6;
 		}
-			else if(Estado == e1 || Estado == e2)
+			else if(Estado == e1 || Estado == e2||Estado==e3)
 		{
 			Estado = e2;
 		}
@@ -306,7 +306,7 @@ void AnalizadorDeCaracter(char letra){
 	}
 	
 	if(letra=='/'||letra=='*'){
-		if(Estado==e0){
+		if(Estado==e0||Estado==e2||Estado==e3){
 			Estado=e18;
 		}else{
 			exit(-1);
@@ -314,14 +314,14 @@ void AnalizadorDeCaracter(char letra){
 	}
 	
 	if(letra=='<'){
-		if(Estado==e0){
+		if(Estado==e0||Estado==e3||Estado==e2){
 			Estado=e12;
 		}else{
 			exit(-1);
 		}
 	}
 	if(letra=='>'){
-		if(Estado==e0){
+		if(Estado==e0||Estado==e2||Estado==e3){
 			Estado=e14;
 		}else{
 			exit(-1);
