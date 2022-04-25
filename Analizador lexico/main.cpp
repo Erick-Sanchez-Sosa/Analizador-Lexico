@@ -37,24 +37,6 @@ int contadorApagado=0;
 int contadorCiclos=0;
 int contadorCondicional=0;
 
-//prueba tambien rsmm
-/*
-int main()
-{
- string s;
- ifstream f( "salida.txt" );
- if ( f.is_open() ) {
- getline( f, s );
-
- while( !f.eof() ) {
- cout << s << endl;
-
- getline( f, s );
- }
- }
- else cerr << "Error de apertura del archivo." << endl;
-}
-*/
 
 int main() {
 
@@ -75,20 +57,6 @@ int main() {
 		
 	}
 	
-	//---------------------------------------------------
-	//probando rsmm
-	/*
-	if (!archivo.is_open()){
-		archivo.open("entrada.txt", ios::Init);
-	}
-	/*
-	while(getline(archivo, linea)){
-		
-	}*/
-	//------------------------------------------------
-	
-	
-	//---------------------------------
 	while(1){
 		//itera caracter por caracter
 		caracter=fgetc(archivoE);
@@ -101,34 +69,7 @@ int main() {
 		}
 	}
 	i++;
-<<<<<<< HEAD
-	
-	//prueba de esta vaina rsmm
-	if (palabraIngresada==*reservadas){
-		int j=0, pr=0;
-		j++;
-		pr=pr+j;
-		contadorPalabrasReservadas=pr;
-		printf("\n Palabras reservadas: %d ", contadorPalabrasReservadas);
-	}
-	
-	
-	//prueba tambien rsmm
-	/*
-	if (reservadas=="PRINCIPAL" || *reservadas=="MIENTRAS" || *reservadas=="PARA" || *reservadas=="SI" || *reservadas=="SINO" || *reservadas=="IMPRIMIR" || *reservadas=="ALMACENAR" || *reservadas=="ENT" || *reservadas=="DEC" || *reservadas=="CAD" || *reservadas=="V_F" || *reservadas=="VERDADERO" || *reservadas=="FALSO" || *reservadas=="SISINO"; int j=0; j++){
-		int pr=0;
-		pr=pr+j;
-		contadorPalabrasReservadas=pr;
-	}
-	*/
-	
-	
-	//
-	//System("COLOR OA");
-	//
-=======
 
->>>>>>> baad945e1070ba21a003bea553076de25d7f29a6
 	//documento de salida
 	fputs("\n\n------Analisis de salida-------------\n\n",archivoS);
 	fprintf(archivoS, "Palabras Reservadas: %d", contadorPalabrasReservadas);
