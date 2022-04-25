@@ -57,7 +57,7 @@ int main()
 */
 
 int main() {
-	//system(COLOR B0);
+
 	FILE *archivoE;
 	FILE *archivoS;
 	printf("------ Analizador Lexico --------------\n");
@@ -101,6 +101,7 @@ int main() {
 		}
 	}
 	i++;
+<<<<<<< HEAD
 	
 	//prueba de esta vaina rsmm
 	if (palabraIngresada==*reservadas){
@@ -125,6 +126,9 @@ int main() {
 	//
 	//System("COLOR OA");
 	//
+=======
+
+>>>>>>> baad945e1070ba21a003bea553076de25d7f29a6
 	//documento de salida
 	fputs("\n\n------Analisis de salida-------------\n\n",archivoS);
 	fprintf(archivoS, "Palabras Reservadas: %d", contadorPalabrasReservadas);
@@ -137,58 +141,11 @@ int main() {
 	fprintf(archivoS, "\nApagado: %d", contadorApagado);
 	fprintf(archivoS, "\nCondicional: %d", contadorCondicional/2);
 
-		int p;
-	printf("DESEA INCIAR CON EL ANALIZADOR:  1 = SI Y 0 = NO  ");
-	printf("\n");
-	scanf ("%d", &p);
-	printf("\n");
-	if (p==1){
-		int x;
-		int s; 
-		int k; 
-		int n;
-
-		printf(" INGRESE UN NUMERO ENTERO:  ");
-		printf("\n");
-		scanf ("%d", &n);
-
-		for(x=1; n-1>=x;x++){
-			
-			for(s=n;s>=x;s--){
-				printf(" ");
-			}
-			for(k=1;2*x-1>=k;k++){
-				printf("*!*");
-			}
-			printf("\n");
-		}
-
-		
-		for(x=1;n>=x;x++){
-			
-			for(s=1;s<=x;s++){
-				printf(" ");
-			}
-			
-			for(k=2*n-1;2*x-1<=k;k--){
-				printf("*!*");
-			}
-			printf("\n");
-		}
-
 		printf("\n");
 		printf("\n  ARCHIVO DE SALIDA LISTO");
 		printf("\n");
 		system("pause");
 		
-
-	}else{
-		printf("NO SE PUDO INICIAR");
-		
-	}
-
-	
-	return 0;
 }
 
 void AnalizadorDeCaracter(char letra){
