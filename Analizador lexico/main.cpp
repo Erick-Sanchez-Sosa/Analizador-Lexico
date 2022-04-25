@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <conio.h>
+#include <fstream>
 
 
 //Funciones
@@ -25,7 +26,7 @@ enum TEstados{e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,
 enum TEstados Estado=e0;
 
 
-//Estos son los contadores de los elementos de la tabla
+//Eestos son los contadores de los elementos de la tabla
 int contadorVariables=0;
 int contadorNumeros=0;
 int contadorPalabrasReservadas=0;
@@ -36,7 +37,24 @@ int contadorApagado=0;
 int contadorCiclos=0;
 int contadorCondicional=0;
 
+//prueba tambien rsmm
+/*
+int main()
+{
+ string s;
+ ifstream f( "salida.txt" );
+ if ( f.is_open() ) {
+ getline( f, s );
 
+ while( !f.eof() ) {
+ cout << s << endl;
+
+ getline( f, s );
+ }
+ }
+ else cerr << "Error de apertura del archivo." << endl;
+}
+*/
 
 int main() {
 	//system(COLOR B0);
@@ -52,10 +70,25 @@ int main() {
 	if(archivoE == NULL){
 		perror ("ARCHIVO NO ENCONTRADO \n");
 		return 1;
+	}else{
+		printf("ARCHIVO ENCONTRADO \n");
+		
 	}
-	printf("ARCHIVO ENCONTRADO \n");
 	
-	//------------------------------
+	//---------------------------------------------------
+	//probando rsmm
+	/*
+	if (!archivo.is_open()){
+		archivo.open("entrada.txt", ios::Init);
+	}
+	/*
+	while(getline(archivo, linea)){
+		
+	}*/
+	//------------------------------------------------
+	
+	
+	//---------------------------------
 	while(1){
 		//itera caracter por caracter
 		caracter=fgetc(archivoE);
@@ -68,6 +101,27 @@ int main() {
 		}
 	}
 	i++;
+	
+	//prueba de esta vaina rsmm
+	if (palabraIngresada==*reservadas){
+		int j=0, pr=0;
+		j++;
+		pr=pr+j;
+		contadorPalabrasReservadas=pr;
+		printf("\n Palabras reservadas: %d ", contadorPalabrasReservadas);
+	}
+	
+	
+	//prueba tambien rsmm
+	/*
+	if (reservadas=="PRINCIPAL" || *reservadas=="MIENTRAS" || *reservadas=="PARA" || *reservadas=="SI" || *reservadas=="SINO" || *reservadas=="IMPRIMIR" || *reservadas=="ALMACENAR" || *reservadas=="ENT" || *reservadas=="DEC" || *reservadas=="CAD" || *reservadas=="V_F" || *reservadas=="VERDADERO" || *reservadas=="FALSO" || *reservadas=="SISINO"; int j=0; j++){
+		int pr=0;
+		pr=pr+j;
+		contadorPalabrasReservadas=pr;
+	}
+	*/
+	
+	
 	//
 	//System("COLOR OA");
 	//
